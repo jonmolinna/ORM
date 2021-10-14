@@ -1,0 +1,33 @@
+npm install sequelize
+npm install pg pg-hstore => Postgres
+npm install express
+
+npm install -g sequelize-cli
+sequelize init
+sequelize => permite ver comando de ayuda
+
+node app.js
+nodemon app.js
+
+Comandos
+-----------------------------------------------------
+sequelize db:create  => Crear base de datos especificada por configuración
+
+sequelize model:generate --name User --attributes name:string,email:string,role:string => creando tablas
+sequelize model:generate --name Post --attributes body:string
+
+sequelize db:drop => elimina la data
+
+sequelize db:migrate => Ejecutar migraciones pendientes
+sequelize db:migrate:status => permite ver el estado de la migracion
+sequelize db:migrate:undo => este comando revertirá la migración más reciente (Vuelve al anterior migracion).
+sequelize db:migracion:undo:all => Deshace todas las migraciones 
+
+sequelize seed:generate --name create-fake-users => crea un archivo fake en la carpeta de seeders
+sequelize db:seed:all => Inserta los datos al tabla
+
+
+Links
+--------------------------------------------------
+validaciones => https://sequelize.org/master/manual/validations-and-constraints.html
+migrations => https://sequelize.org/master/manual/migrations.html
