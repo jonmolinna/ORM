@@ -1,0 +1,44 @@
+npm install -g typeorm
+npm install -D typescript@latest ts-node@latest
+typeorm init
+npm install
+npm install pg => postsql
+npm install express
+npm install -D @types/express
+npm install -D nodemon
+npm install uuid
+npm install -D @types/uuid
+npm install class-validator
+
+
+
+Para ejecutar
+-------------------------
+npm start
+npm run dev
+npm run build
+
+cd build
+node index
+
+
+Comandos
+-------------------------------------------
+npm run typeorm
+npm run typeorm schema:drop => permite eliminar el schema (tablas)
+npm run typeorm schema:sync => crea las schema
+npm run typeorm migration:generate -- -n create-schema => permite hacer migraciones
+npm run typeorm migration:run => Ejecuta todas las migraciones pendientes.
+npm run typeorm migration:revert => Revierte la última migración ejecutada.
+npm run typeorm migration:show => Muestra todas las migraciones y si se han ejecutado o no
+
+npm un mysql
+
+links
+---------------------------------
+@BeforeInsert => https://typeorm.io/#/listeners-and-subscribers
+Relations => https://typeorm.io/#/many-to-one-one-to-many-relations/
+Using Validation => https://typeorm.io/#/validation
+
+
+"synchronize": true, => ormconfig.json 
