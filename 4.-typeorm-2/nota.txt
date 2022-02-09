@@ -1,0 +1,27 @@
+npm init -y
+
+npm install express
+npm install @types/express
+npm install pg
+npm install ts-node => es como el nodemon
+npm install typeorm
+npm install typescript
+
+npm install nodemon -g
+npm install nodemon -D
+npm run dev
+
+
+Indice
+---------------------------------------
+- Connecting to the DB
+- Entities => tablas
+- Inheritance => Herencia
+- Relationships => Relaciones
+    Client -> Transaction => (uno a muchos O muchos a uno)
+    Client -> Banker => (muchos a muchos) => Aqui tienes que crear una tablas para guardar el idClient and idBanker;
+
+- Inserting Data
+- Forming Relationships
+- Deleting Data
+- Fetching Data
