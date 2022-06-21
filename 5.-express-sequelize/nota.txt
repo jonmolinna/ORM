@@ -1,0 +1,4 @@
+npm install express
+npm install nodemon -D
+npm install sequelize
+npm install mysql2
