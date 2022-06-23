@@ -1,0 +1,61 @@
+npm init -y
+npm i express sequelize mysql2
+npm i nodemon -D
+npm i sequelize-cli -D
+npm install --save-dev sequelize-cli
+npm install dotenv
+npm install faker (crea un falso dato en forma aleatorio)
+
+npx sequelize-cli init
+
+Migracion
+-------------------------------
+npx sequelize-cli db:migrate
+
+Creando Modelos
+----------------------------------------
+npx sequelize-cli model:generate --name User --attributes name:string,age:integer
+npx sequelize-cli model:generate --name Address --attributes street:string
+npx sequelize-cli model:generate --name Test --attributes street:string
+
+Seeds o sembrar bases de datos (rellenar la BD con datos de prueba)
+------------------------------------------------------------------------
+1. para crear
+---------------
+npx sequelize-cli seed:generate --name create-users
+npx sequelize-cli seed:generate --name more-users
+npx sequelize-cli seed:generate --name create-some-addresses
+npx sequelize-cli seed:generate --name more-create-users
+
+2. Para ejecutar
+-----------------
+npx sequelize-cli db:seed:all
+
+3. Para deshacer con la migracion (eliminar con los registros)
+--------------------------------
+npx sequelize-cli db:seed:undo --seed 20220623141254-more-users.js
+npx sequelize-cli db:seed:undo => deshace la semilla mas reciente
+npx sequelize-cli db:seed:undo:all
+npx sequelize-cli db:seed:undo --seed name-of-seed-as-in-data => mas especifico
+
+
+Migraciones (control de versiones)
+-------------------------------------------------
+npx sequelize-cli db:migrate
+
+1. Crear una migracion
+-----------------------
+npx sequelize-cli model:generate --name post --attributes title:string,body:text
+npx sequelize-cli migration:generate --name create-users-table
+npx sequelize-cli migration:generate --name create-addresses-table
+npx sequelize-cli migration:generate --name add-city-and-country-to-addresses-table
+
+2. Para migrar (registrar el migracion)
+----------------------------------------------
+npx sequelize-cli db:migrate
+
+3.- Para deshacer con la migracion
+-------------------------------------
+npx sequelize-cli db:migrate:undo (elimina el ultimo migracion)
+npx sequelize-cli db:migrate:undo:all --to XXXXXXXXXXXXXX-create-posts.js
+npx sequelize-cli db:migrate:undo:all
