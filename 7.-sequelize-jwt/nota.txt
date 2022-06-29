@@ -1,0 +1,35 @@
+npm init -y
+npm install express
+npm install sequelize
+npm install mysql2
+npm install dotenv
+npm install nodemon sequelize-cli -D
+npm install bcrypt jsonwebtoken
+
+
+Inicializar sequelize cli
+-----------------------------------
+npx sequelize-cli init
+
+Generando Models (migraciones)
+--------------------------------------
+npx sequelize-cli model:generate --name user --attributes name:string,password:string,email:string
+npx sequelize-cli model:generate --name Post --attributes title:string,body:text
+npx sequelize-cli model:generate --name role --attributes role:string
+
+Migraciones (crea tablas)
+---------------------------------
+npx sequelize-cli db:migrate => ejecutas para models y migraciones
+
+npx sequelize-cli migration:generate --name create-user-role
+
+
+Seeders (inserta registro a las tablas)
+-------------------------------------
+npx sequelize-cli db:seed:all => (ejecuta el seeders)
+npx sequelize-cli db:seed:undo --seed 20220627142623-create-posts-and-users.js
+
+npx sequelize-cli seed:generate --name create-users
+npx sequelize-cli seed:generate --name create-posts
+npx sequelize-cli seed:generate --name create-roles
+npx sequelize-cli seed:generate --name create-users-roles
