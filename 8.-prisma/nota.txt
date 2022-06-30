@@ -1,0 +1,21 @@
+npm init -y 
+npm install prisma --save-dev
+npx prisma
+npx prisma init
+
+Migraciones (crea tabla en la BD)
+---------------------------------------
+npx prisma migrate dev --name init
+
+npx prisma introspect --force ===> actualiza las tablas de mysql a prisma (git pull)
+
+
+Prisma Studio
+------------------------------------
+npx prisma studio
+
+Prisma CLI
+------------------------------------------
+npm install @prisma/client
+
+npm install express
